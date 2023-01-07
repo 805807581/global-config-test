@@ -1,10 +1,17 @@
 package main
 
-import "fmt"
+import (
+	"fangao.com/glocalconfigtest/config"
+	"fangao.com/glocalconfigtest/user"
+)
 
 func main() {
-	fmt.Println("Hello, world!")
-	fmt.Println("Hello, world!")
-	fmt.Println("Hello, world!")
-	fmt.Println("版本1")
+	config.SetConfig(config.Config{
+		UserName: "admin",
+		PassWord: "123456",
+		Age:      18,
+		Name:     "admin",
+	})
+
+	user.Login()
 }
